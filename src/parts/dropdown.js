@@ -287,6 +287,8 @@ export default {
         ddHeight = ddHeight || ddElm.clientHeight
 
         function getAncestorsOffsets(p){
+            if (p.tagName === 'DIALOG') return {top: p.offsetTop, left: p.offsetLeft}
+
             var top = 0, left = 0;
 
             p = p.parentNode;
